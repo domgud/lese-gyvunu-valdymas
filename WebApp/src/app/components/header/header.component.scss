@@ -1,0 +1,42 @@
+.topnav {
+  overflow: hidden;
+  background-color: #534741;
+  width: 100%;
+  //background-color: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ec9736;
+  color: #312a27;
+}
+
+.topnav a.active {
+  background-color: #e87e04;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+.mat-icon-button{
+  padding-top: 4px;
+  color: white;
+
+}
+

@@ -1,0 +1,44 @@
+[
+  {
+    "city": "Vilnius",
+    "region": ["Elektrėnų sav.","Šalčininkų r. sav.", "Širvintų r. sav.", "Švenčionių r. sav.", "Trakų r. sav.", "Ukmergės r. sav.", "Vilniaus m. sav.", "Vilniaus r. sav."]
+  },
+  {
+    "city": "Kaunas",
+    "region": ["Birštono sav.","Jonavos r. sav.", "Kaišiadorių r. sav.", "Kauno m. sav.", "Kauno r. sav.", "Kėdainių r. sav.", "Prienų r. sav.", "Raseinių r. sav."]
+  },
+  {
+    "city": "Klaipėda",
+    "region": ["Klaipėdos m. sav.", "Klaipėdos r. sav.", "Kretingos r. sav.", "Neringos sav.", "Palangos m. sav.", "Skuodo r. sav.", "Šilutės r. sav."]
+  },
+  {
+    "city": "Panevėžys",
+    "region": ["Biržų r. sav.", "Kupiškio r. sav.", "Panevėžio m. sav.", "Panevėžio r. sav.", "Pasvalio r. sav.", "Rokiškio r. sav."]
+  },
+  {
+    "city": "Šiauliai",
+    "region": ["Akmenės r. sav.", "Joniškio r. sav.", "Kelmės r. sav.", "Pakruojo r. sav.", "Radviliškio r. sav.", "Šiaulių m. sav.", "Šiaulių r. sav."]
+  },
+  {
+    "city": "Alytus",
+    "region": ["Alytaus m. sav.",",Alytaus r. sav.","Druskininkų sav.","Lazdijų r. sav.","Varėnos r. sav."]
+  },
+  {
+    "city": "Utena",
+    "region": ["Anykščių r. sav.","Ignalinos r. sav.","Molėtų r. sav.","Utenos r. sav.","Visagino sav.","Zarasų r. sav."]
+  },
+  {
+    "city": "Marijampolė",
+    "region": ["Kalvarijos sav.", "Kazlų Rūdos sav.", "Marijampolės sav.", "Marijampolės r. sav.", "Šakių r. sav.", "Vilkaviškio r. sav."]
+  },
+  {
+    "city": "Tauragė",
+    "region": ["Jurbarko r. sav.", "Pagėgių sav.", "Šilalės r. sav.", "Tauragės r. sav."]
+  },
+  {
+    "city": "Telšiai",
+    "region": ["Mažeikių r. sav.", "Plungės r. sav.", "Rietavo sav.", "Telšių r. sav."]
+  }
+
+
+]

@@ -1,0 +1,21 @@
+<div class="topnav">
+  <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/" id="lese">LESĖ</a>
+  <a *ngIf="checkLogin()" routerLink="/animal/register" routerLinkActive="active">Registruoti gyvūną</a>
+  <a *ngIf="checkLogin()" routerLink="/animal/list" routerLinkActive="active">Gyvūnų sąrašas</a>
+  <a *ngIf="!checkLogin()"  routerLink="/login" routerLinkActive="active">Prisijungti</a>
+  <a *ngIf="!checkLogin()"  routerLink="/register" routerLinkActive="active">Registruotis</a>
+  <div class="topnav-right">
+    <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="checkLogin()">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span routerLink="/profile">Profilis</span>
+      </button>
+      <button mat-menu-item (click)="onLogout()">
+        <span  >Atsijungti</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>
+

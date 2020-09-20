@@ -1,0 +1,23 @@
+  <form [formGroup]="generationForm"  (ngSubmit)="onSubmit()">
+
+    <div class="container">
+      <mat-form-field>
+        <mat-label>Metai</mat-label>
+        <mat-select matNativeControl formControlName="year" required>
+          <mat-option *ngFor="let year of years" value="{{year}}">{{year}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Gyvūno tipas</mat-label>
+        <mat-select matNativeControl formControlName="type" required>
+          <mat-option value="0">Šuo</mat-option>
+          <mat-option value="1">Katė</mat-option>
+          <mat-option value="2">Kitas</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+      <button mat-raised-button color="warn">Generuoti ataskaitą</button>
+    </div>
+  </form>

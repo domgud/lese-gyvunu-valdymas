@@ -1,0 +1,92 @@
+<mat-card>
+
+        <mat-card-title>Gyvūnų sąrašas</mat-card-title>
+  <div class="form-container">
+        <form class="date-block" [formGroup]="filterForm">
+          <div>
+            <mat-form-field>
+              <input matInput [matDatepicker]="fromDate" placeholder="Nuo data" formControlName="fromDate">
+              <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+              <mat-datepicker #fromDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="date-block__list container-date">
+            <mat-form-field>
+              <input matInput [matDatepicker]="toDate" placeholder="Iki data" formControlName="toDate">
+              <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+              <mat-datepicker #toDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <button mat-raised-button color="warn" (click)="filterAnimals()">Filtruoti</button>
+          <button class="clearbtn" mat-stroked-button color="basic" (click)="resetAnimalList()">Išvalyti</button>
+          <div class="filler" style="width: 15%"></div>
+          <app-report-form></app-report-form>
+        </form>
+    <app-floating-btn></app-floating-btn>
+  </div>
+
+
+  <table #animalTable mat-table [dataSource]="dataSource" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="specialID">
+      <mat-header-cell *matHeaderCellDef> Gyvūno ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.specialID}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="admissionDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header=""> Priėmimo data </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.admissionDate.toString().substring(0, 10)}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="vaccinationDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header=""> Skiepo data </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div *ngIf="needVaccine(element); then content else other_content"></div>
+          <ng-template #content>
+            <div style="color:red;">
+              {{element.vaccinationDate == undefined ? '-' : element.vaccinationDate.toString().substring(0, 10)}}
+            </div>
+          </ng-template>
+          <ng-template #other_content>
+            <div>
+              {{element.vaccinationDate == undefined ? '-' : element.vaccinationDate.toString().substring(0, 10)}}
+            </div>
+          </ng-template>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Statusas </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{StatusEnum[element.statusID]}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="statusDate">
+      <mat-header-cell *matHeaderCellDef> Statuso data </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.statusDate == undefined ? '-' : element.statusDate.toString().substring(0, 10)}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="icons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span (click)="generateAct(element.id)" class="material-icons icon">get_app</span>
+        <span (click)="navigateToEdit(element)" class="material-icons icon">edit</span>
+        <span (click)="deleteAnimal(element.id)" class="material-icons icon">delete</span>
+        <div *ngIf="needVaccine(element)">
+          <span style="color: red;" class="material-icons">warning</span>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter </td>
+      </tr>
+    </table>
+
+</mat-card>

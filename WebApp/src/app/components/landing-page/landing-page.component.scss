@@ -1,0 +1,46 @@
+header{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("src/images/catdog2.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 87vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+h1{
+  font-weight: 1;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+}
+.content{
+  top: 20%;
+  left: 10%;
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+}
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;/*tb, lr*/
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  transition: background-color 0.5s, border 0.2s, color 0.5s;
+}
+.btn-full:link, .btn-full:visited {
+  background-color: #f39c12;
+  border: 1px solid #f39c12;
+  color: white;
+  margin-right: 20px;
+}
+
+.btn:hover, .btn:active{
+  background-color: #b87409;
+}
+.btn-full:hover,
+.btn-full:active {
+  background-color: #b87409;
+  border: 1px solid #b87409;
+  color: white;
+}
+
