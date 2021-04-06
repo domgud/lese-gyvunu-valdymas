@@ -1,5 +1,8 @@
 # About the app
 Team project for managing an animal shelter system (Angular + .NET Core)
+<img src="/images/img1.png" alt="Homepage"/>
+<br>
+<img src="/images/img2.png" alt="IndexPage"/>
 # Getting started
 Clone the repository
 
